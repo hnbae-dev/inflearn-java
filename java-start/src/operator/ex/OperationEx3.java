@@ -1,6 +1,6 @@
 package operator.ex;
 
-public class Operation3 {
+public class OperationEx3 {
 
   public static void main(String[] args) {
     int score = 79;
