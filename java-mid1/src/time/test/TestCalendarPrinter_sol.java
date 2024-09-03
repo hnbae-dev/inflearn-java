@@ -15,7 +15,10 @@ public class TestCalendarPrinter_sol {
         int month = sc.nextInt();
         sc.nextLine();
 
+        long startTime = System.currentTimeMillis();
         printCalendar(year, month);
+        long endTime = System.currentTimeMillis();
+        System.out.println(endTime - startTime + "ms");
     }
 
     private static void printCalendar(int year, int month) {

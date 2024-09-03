@@ -15,6 +15,8 @@ public class TestCalendarPrinter {
         int month = sc.nextInt();
         sc.nextLine();
 
+        long startTime = System.currentTimeMillis();
+
         LocalDate firstDate = LocalDate.of(year, month, 1);
         DayOfWeek firstDay = firstDate.getDayOfWeek();
 
@@ -35,5 +37,9 @@ public class TestCalendarPrinter {
             }
             count++;
         }
+
+        long endTime = System.currentTimeMillis();
+
+        System.out.println(endTime - startTime + "ms");
     }
 }
