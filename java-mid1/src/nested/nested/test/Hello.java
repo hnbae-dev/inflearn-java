@@ -1,2 +1,6 @@
-package nested.nested.test;public interface Hello {
+package nested.nested.test;
+
+public interface Hello {
+    void hello();
+
 }

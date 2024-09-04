@@ -1,2 +1,11 @@
-package nested.nested.test;public class OuterClass2 {
+package nested.nested.test;
+
+public class OuterClass2 {
+
+    class InnerClass {
+        void hello() {
+            System.out.println("InnerClass.hello");
+        }
+    }
+
 }

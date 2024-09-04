@@ -1,16 +1,19 @@
 package nested.nested.local;
 
-public class LocalOuterV1 {
+import java.lang.reflect.Field;
+
+public class LocalOuterV3 {
 
     private int outInstanceVar = 3;
 
-    public void process(int paramVar) {
+    public Printer process(int paramVar) {
         int localVar = 1;
 
-        class LocalPrinter {
+        class LocalPrinter implements Printer {
             int value = 0;
 
-            public void printDate() {
+            @Override
+            public void print() {
                 System.out.println("value = " + value);
                 System.out.println("localVar = " + localVar);
                 System.out.println("paramVar = " + paramVar);
@@ -19,11 +22,21 @@ public class LocalOuterV1 {
         }
 
         LocalPrinter printer = new LocalPrinter();
-        printer.printDate();
+//        printer.print();
+        return printer;
     }
 
     public static void main(String[] args) {
-        LocalOuterV1 localOuter = new LocalOuterV1();
-        localOuter.process(2);
+        LocalOuterV3 localOuter = new LocalOuterV3();
+        Printer printer = localOuter.process(2);
+        printer.print();
+
+        // 추가
+        System.out.println();
+        System.out.println("필드 확인");
+        Field[] fields = printer.getClass().getDeclaredFields();
+        for (Field field : fields) {
+            System.out.println(field);
+        }
     }
 }
