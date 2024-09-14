@@ -1,4 +1,4 @@
-package generic.test.ex3;
+package generic.test.ex3.unit;
 
 public class BioUnit {
 
@@ -18,5 +18,11 @@ public class BioUnit {
         return hp;
     }
 
-    
+    @Override
+    public String toString() {
+        return "BioUnit{" +
+            "name='" + name + '\'' +
+            ", hp=" + hp +
+            '}';
+    }
 }
